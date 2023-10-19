@@ -1,7 +1,7 @@
 #include <stdio.h>
  int main(){
     int s1, d1, s2, d2, s3, d3;
-    int time_point[24]={0};
+    int time_point[24];
     scanf("%d%d%d%d%d%d",&s1, &d1, &s2, &d2, &s3, &d3);
 
     for (int i= 0; i < 24; i++) {
