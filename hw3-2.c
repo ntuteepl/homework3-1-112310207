@@ -16,7 +16,7 @@
     }
     }
     int min_buses=0 ;
-    for (int i = 0; i < 3; i++) {
+    for (int i = 0; i < 24; i++) {
     if (time_point[i] > 0){
     min_buses++;
     }
