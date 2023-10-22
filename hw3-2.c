@@ -3,9 +3,9 @@
     int s1, d1, s2, d2, s3, d3;
 
     scanf("%d%d%d%d%d%d",&s1, &d1, &s2, &d2, &s3, &d3);
-    int timeline[24]={0};
+    int timeline[25]={0};
 
-    for (int i= 1; i <=24; i++) {
+    for (int i= 0; i <25; i++) {
 
 
     if (i>=s1 && i<d1) {
@@ -26,11 +26,11 @@ timeline[d3]--;
     }
 
     int min_buses=0 ;
-    for (int i = 1; i <=24; i++) {
+    for (int i = 0; i <25; i++) {
 
     if (timeline[i] > 0){
 min_buses++;     
-min_buses--;
+
     }
 
     }
