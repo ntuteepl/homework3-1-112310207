@@ -23,22 +23,15 @@ timeline[d2]--;
 timeline[d3]--;
     }
     }
-    }
+int min_buses=0 ;
 
-    int min_buses=0 ;
-    for (int i = 0; i <25; i++) {
 
     if (timeline[i] > 0){
-min_buses++;     
+min_buses++;
 
-    }
-
-    }
     printf("%d\n", min_buses);
     }
-
-
-
-
+}
+ }
 
 
