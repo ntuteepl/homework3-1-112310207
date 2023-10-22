@@ -29,6 +29,7 @@ timeline[d3]--;
     for (int i = 1; i <=24; i++) {
 
     if (timeline[i] > 0){
+min_buses++;     
 min_buses--;
     }
 
