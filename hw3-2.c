@@ -1,29 +1,43 @@
 #include <stdio.h>
  int main(){
     int s1, d1, s2, d2, s3, d3;
-    int time_point[24];
-    scanf("%d%d%d%d%d%d",&s1, &d1, &s2, &d2, &s3, &d3);
 
-    for (int i= 0; i < 24; i++) {
+    scanf("%d%d%d%d%d%d",&s1, &d1, &s2, &d2, &s3, &d3);
+    int timeline[24]={0};
+
+    for (int i= 1; i <=24; i++) {
+
+
     if (i>=s1 && i<d1) {
-    time_point[i]++;
+timeline[s1]++;
+timeline[d1]--;
     }
+
+
     if (i>=s2 && i<d2) {
-    time_point[i]++;
-    }
+timeline[s2]++;
+timeline[d2]--;
+
     if (i>=s3 && i<d3){
-    time_point[i]++;
+            timeline[s3]++;
+timeline[d3]--;
     }
     }
+    }
+
     int min_buses=0 ;
-    for (int i = 0; i < 24; i++) {
-    if (time_point[i] > 0){
-    min_buses++;
+    for (int i = 1; i <=24; i++) {
+
+    if (timeline[i] > 0){
+min_buses++;
     }
 
     }
     printf("%d\n", min_buses);
     }
+
+
+
 
 
 
