@@ -1,38 +1,34 @@
-#include <stdio.h>
- int main(){
-    int s1, d1, s2, d2, s3, d3;
 
-    scanf("%d%d%d%d%d%d",&s1, &d1, &s2, &d2, &s3, &d3);
-    int timeline[25]={0};
+#include<stdlib.h>
 
-    for (int i= 0; i <25; i++) {
+int main(void){
+	int s1,d1,s2,d2,s3,d3;
+    scanf("%d %d %d %d %d %d", &s1, &d1, &s2, &d2, &s3, &d3);
+
+    if(0 < s1 && s1 <= d1 && d1 <= 24){
+
+		printf("%d%d\n",s1,d1);}
+
+	if(0 < s2 && s2 <= d2 && d2 <= 24){
+		printf("%d%d\n", s2, d2);
+	}
 
 
-    if (i>=s1 && i<d1) {
-timeline[s1]++;
-timeline[d1]--;
-    }
+
+	if(0 < s3 && s3 <= d3 && d3 <= 24){
+		printf("%d%d\n", s3, d3);
+	}
 
 
-    if (i>=s2 && i<d2) {
-timeline[s2]++;
-timeline[d2]--;
+	int bus=1 ;
+	if (d1>s2){
+		bus+=1;
+	}
+	if(d1>s3 && d2>s3){
+		bus+=1;
+	}
+	printf("%d\n",bus);
+    return 0;
+}
 
-    if (i>=s3 && i<d3){
-            timeline[s3]++;
-timeline[d3]--;
-    }
-    }
-    }
-
-    int min_buses=0 ;
-    for (int i = 0; i <25; i++) {
-
-    if (timeline[i] > 0){
-min_buses++;     
-
-    }
-
-    }
-    printf("%d\n", min_buses);
     
