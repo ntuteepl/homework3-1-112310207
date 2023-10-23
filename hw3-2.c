@@ -1,40 +1,51 @@
 #include <stdio.h>
- int main(){
+
+int main() {
     int s1, d1, s2, d2, s3, d3;
 
-    scanf("%d%d%d%d%d%d",&s1, &d1, &s2, &d2, &s3, &d3);
-    int timeline[25]={0};
-
-    for (int i= 0; i <25; i++) {
 
 
-    if (i>=s1 && i<d1) {
-timeline[s1]++;
-timeline[d1]--;
+
+
+
+// 输入三笔订单的出发时间和返回时间
+
+    scanf("%d %d %d %d %d %d", &s1, &d1, &s2, &d2, &s3, &d3);
+
+
+
+int num_of_vehicles = 1;  // 初始化车辆数量为1，第一笔订单无需判断
+
+
+
+
+// 检查第二笔订单是否与第一辆车的任务冲突
+    if (s2 < d1) {
+        // 如果冲突，需要新增一辆车
+        num_of_vehicles++;
     }
 
 
-    if (i>=s2 && i<d2) {
-timeline[s2]++;
-timeline[d2]--;
 
-    if (i>=s3 && i<d3){
-            timeline[s3]++;
-timeline[d3]--;
-    }
-    }
-    }
 
-    int min_buses=0 ;
-    for (int i = 0; i <25; i++) {
 
-    if (timeline[i] > 0){
-min_buses++;     
 
-    }
+// 检查第三笔订单是否与已有车辆的任务冲突
 
-    }
-    printf("%d\n", min_buses);
+
+if (s3 < (d1 > d2 ? d1 : d2)) {
+
+
+// 如果冲突，需要新增一辆车
+        num_of_vehicles++;
     }
 
 
+
+
+printf("%d\n", num_of_vehicles);
+
+
+
+return 0;
+}
